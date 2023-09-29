@@ -19,12 +19,15 @@ public  class Task implements Comparable<Task> {
 		return this.task;
 	}
 	
+	@Override
+	public String toString() {
+		return  this.time + ":" + this.task ;
+	}
+	
 	//順序を定義
 	@Override
-	public int compareTo(Task list) {
-		return LocalDate.compare( this.time,list.getTime());
+	public int compareTo(Task task) {
+		return this.time.compareTo(task.time);
 	}
 		 
 }
-
-//https://www.techiedelight.com/ja/sort-list-multiple-attributes-java/
